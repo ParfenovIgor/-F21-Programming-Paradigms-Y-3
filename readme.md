@@ -27,8 +27,8 @@ c1 := \s. \z. s z
 c2 := \s. \z. s (s z)
 
 inc := \n. \s. \z. n s (s z)
-sum := \m. \n. \s. \z. m s (n s z)
-prd := \m. \n. m (sum n) c0
+add := \m. \n. \s. \z. m s (n s z)
+prd := \m. \n. m (add n) c0
 pow := \m. \n. m (prd n) c1
 ```
 
@@ -38,7 +38,7 @@ pow := \m. \n. m (prd n) c1
 
 [Download IDE](https://download.racket-lang.org/)
 
-``` Lisp
+``` Racket
 #lang slideshow
 
 (define (twice f x) (f (f x)))
@@ -81,7 +81,7 @@ main = print (apply_twice (\x -> x * x) [Just 1, Nothing, Just 3])
 
 [Online IDE](https://swish.swi-prolog.org/)
 
-``` Haskell
+``` Prolog
 swap_pairs([], []).
 swap_pairs([A], [A]).
 swap_pairs([A,B|C], [B,A|D]) :- swap_pairs(C, D).
