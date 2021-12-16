@@ -1,0 +1,11 @@
+1. xor := (\a \b a ((\c c fls tru) a) b) tru false
+
+2. xor tru tru ->
+   tru (\c c fls tru) tru tru ->
+   (\c c fls tru) tru ->
+   fls
+
+3. 
+   sum := \m \n \s \z m s (n s z)
+   mult := \m \n m (plus n) c0
+   doubleThenInc := \a  sum (mult c2 a) c1
