@@ -21,6 +21,8 @@
 
 [Bonus Interpreter](https://github.com/ParfenovIgor/LCP)
 
+Demo snippet
+
 ``` Haskell
 c0 := \s. \z. z
 c1 := \s. \z. s z
@@ -37,6 +39,8 @@ pow := \m. \n. m (prd n) c1
 [Wikipedia](https://en.wikipedia.org/wiki/Racket_(programming_language))
 
 [Download IDE](https://download.racket-lang.org/)
+
+Demo snippet
 
 ``` Racket
 #lang slideshow
@@ -57,10 +61,18 @@ pow := \m. \n. m (prd n) c1
 
 [Online IDE](https://code.world/haskell#)
 
-Haskell does not have IDE. Here is what author used:
-1. Download [GHC compiler](https://www.haskell.org/ghc/download.html)
-2. Download [Visual Studio Code](https://code.visualstudio.com/)
-3. Download in Visual Studio Code the **Haskell language support**
+Set up Visual Studio Code (VS Code) as an IDE
+1. Install [GHC compiler](https://www.haskell.org/ghc/download.html) or full [Haskell platform](https://www.haskell.org/platform/)
+2. Download [VS Code](https://code.visualstudio.com/)
+3. Install `Haskell` extension in VS Code
+4. Use `ghci` to run files. E.g.:
+    ```sh
+    cd "Tests Solutions by Student"
+    ghci "Test 6.hs"
+    main
+    ```
+
+Demo snippet
 
 ``` Haskell
 twice :: (t -> t) -> Maybe t -> Maybe t
@@ -80,6 +92,8 @@ main = print (apply_twice (\x -> x * x) [Just 1, Nothing, Just 3])
 [Wikipedia](https://en.wikipedia.org/wiki/Prolog)
 
 [Online IDE](https://swish.swi-prolog.org/)
+
+Demo snippet
 
 ``` Prolog
 swap_pairs([], []).
