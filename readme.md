@@ -7,10 +7,18 @@
 * Haskell
 * Prolog
 
+[Course Outline](https://docs.google.com/spreadsheets/d/1VPd8rdu_5SfPqgZrTYCrGrIKd2mOKsxOI_J7EIrarHQ/edit#gid=0)
+
+[Lecture Recordings](https://www.youtube.com/playlist?list=PLov3NSwpY86eMWcSLVDi071ertPAA22Dr)
+
+[Final Exam Questions](https://docs.google.com/spreadsheets/d/1mlgcu1c54fJR5M7MFuieSsc7jowtdUI1QCdR1TobOGg/edit#gid=0)
+
 ## Lambda Calculus
 
 [Wikipedia](https://en.wikipedia.org/wiki/Lambda_calculus)
+
 [Calculator](https://lambdacalc.io/)
+
 [Bonus Interpreter](https://github.com/ParfenovIgor/LCP)
 
 ``` Haskell
@@ -27,6 +35,7 @@ pow := \m. \n. m (prd n) c1
 ## Racket
 
 [Wikipedia](https://en.wikipedia.org/wiki/Racket_(programming_language))
+
 [Download IDE](https://download.racket-lang.org/)
 
 ``` Lisp
@@ -45,12 +54,13 @@ pow := \m. \n. m (prd n) c1
 ## Haskell
 
 [Wikipedia](https://en.wikipedia.org/wiki/Haskell_(programming_language))
+
 [Online IDE](https://code.world/haskell#)
 
 Haskell does not have IDE. Here is what author used:
-1. Download GHC compiler
-2. Download Visual Studio Code
-3. Download in VS Code the Haskell language support
+1. Download [GHC compiler](https://www.haskell.org/ghc/download.html)
+2. Download [Visual Studio Code](https://code.visualstudio.com/)
+3. Download in Visual Studio Code the **Haskell language support**
 
 ``` Haskell
 twice :: (t -> t) -> Maybe t -> Maybe t
@@ -68,6 +78,7 @@ main = print (apply_twice (\x -> x * x) [Just 1, Nothing, Just 3])
 ## Prolog
 
 [Wikipedia](https://en.wikipedia.org/wiki/Prolog)
+
 [Online IDE](https://swish.swi-prolog.org/)
 
 ``` Haskell
