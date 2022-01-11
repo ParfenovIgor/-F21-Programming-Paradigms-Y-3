@@ -29,8 +29,8 @@ c1 := \s. \z. s z
 c2 := \s. \z. s (s z)
 
 inc := \n. \s. \z. n s (s z)
-add := \m. \n. \s. \z. m s (n s z)
-prd := \m. \n. m (add n) c0
+sum := \m. \n. \s. \z. m s (n s z)
+prd := \m. \n. m (sum n) c0
 pow := \m. \n. m (prd n) c1
 ```
 

@@ -74,7 +74,7 @@ fst := \x.x tru
 snd := \x.x fls
 
 # The explanation is following:
-# fst (pair m n) -> fst \x.(x m n) -> \x.(x m n) tru -> tru m n -> m
+# fst (pair m n) -> fst (\x.x m n) -> (\x.x m n) tru -> tru m n -> m
 
 # Exercise 1.6
 
@@ -94,11 +94,12 @@ equal := \n.\m.zero (minus n m)
 # Exercise 1.8*
 
 [x, y, z] := \c.\n.c x (c y (c z n))
-nil := \c.\n.n
-cons := \h.\t.\c.\n.c h (t c n)
-isnil := \h.h (\x.\y.fls) tru
-head := \h.(\x.\y.\z.y) (h c n)
-tail := \h.\c.\n.(\x.\y.\z.z) (h c n)
+nil := \c.\n.n										# Definition of the empty list
+cons := \h.\t.\c.\n.c h (t c n)								# Append element to the beginning of the list
+isnil := \t.t (\x.\y.fls) tru								# Check, if list is empty. The idea is the same, as in function zero.
+head := \t.(t tru x)									# Get the first element of the list. Apply as c the function, that takes two arguments, and returns the first one.
+size := \t.(t (\x.\y.(sum c1 y)) c0)							# Get the size of the list. Apply as c the function, that takes two arguments, and adds c1 and the size of the second argument.
+tail := \t.\c.\n.(t (\x.\y.(test (equal (size y) (prd (size t))) y (c x y))) n)		# Get the tail of the list. Apply as c the function, that takes two arguments, and checks the size of second argument. If it is equal to the size of the given list minus one, then it returns the second argument. Otherwise, it accumulates the list.
 
 fix := \f. (\x. f (\y. x x y)) (\x. f (\y. x x y))
 g := \fct. \n.
@@ -109,7 +110,7 @@ factorial := fix g
 
 # Exercise 1.9
 
-# NOTE: the idea of recursion used here is applicable not in all reduction strategy. We will use here outermost redex (normal) reduction strategy.
+# NOTE: the idea of recursion used here is applicable not in all reduction strategies. We will use here outermost redex (normal) reduction strategy.
 
 # Obviously, it is impossible to read and understand. Also I did not go into deep definitions and did many already known and obvious reductions in one step.
 
