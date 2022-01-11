@@ -98,7 +98,7 @@ nil := \c.\n.n										# Definition of the empty list
 cons := \h.\t.\c.\n.c h (t c n)								# Append element to the beginning of the list
 isnil := \t.t (\x.\y.fls) tru								# Check, if list is empty. The idea is the same, as in function zero.
 head := \t.(t tru x)									# Get the first element of the list. Apply as c the function, that takes two arguments, and returns the first one.
-size := \t.(t (\x.\y.(sum c1 y)) c0)							# Get the size of the list. Apply as c the function, that takes two arguments, and adds c1 and the size of the second argument.
+size := \t.(t (\x.\y.(plus c1 y)) c0)							# Get the size of the list. Apply as c the function, that takes two arguments, and adds c1 and the size of the second argument.
 tail := \t.\c.\n.(t (\x.\y.(test (equal (size y) (prd (size t))) y (c x y))) n)		# Get the tail of the list. Apply as c the function, that takes two arguments, and checks the size of second argument. If it is equal to the size of the given list minus one, then it returns the second argument. Otherwise, it accumulates the list.
 
 fix := \f. (\x. f (\y. x x y)) (\x. f (\y. x x y))
